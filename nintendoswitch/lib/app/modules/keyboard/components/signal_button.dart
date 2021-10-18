@@ -4,12 +4,12 @@ class SignalButton extends StatefulWidget {
   final bool isPlus;
   final double propBottom;
   final double propLeft;
-  const SignalButton(
-      {Key? key,
-      required this.isPlus,
-      required this.propBottom,
-      required this.propLeft})
-      : super(key: key);
+  const SignalButton({
+    Key? key,
+    required this.isPlus,
+    required this.propBottom,
+    required this.propLeft,
+  }) : super(key: key);
 
   @override
   _SignalButtonState createState() => _SignalButtonState();

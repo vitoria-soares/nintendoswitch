@@ -67,8 +67,8 @@ class _RightSideState extends State<RightSide> {
             gradientBegin: Alignment.centerLeft,
           ),
           BigButton(
-            propBottom: 0.10258,
-            propLeft: 0.07608,
+            positionalBottom: 0.10258,
+            positionalLeft: 0.07608,
           ),
           HomeButton(),
         ],

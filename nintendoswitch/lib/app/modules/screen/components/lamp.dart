@@ -8,7 +8,7 @@ class Lamp extends StatefulWidget {
     Key? key,
     required this.propLeft,
     required this.propBotton,
-    required this.isOn,
+    this.isOn = false,
   }) : super(key: key);
 
   @override

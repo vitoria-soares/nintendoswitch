@@ -20,45 +20,46 @@ class _LeftSideState extends State<LeftSide> {
         borderRadius: BorderRadius.only(topRight: Radius.circular(85)),
       ),
       child: Stack(
-        children: const [
-          SignalButton(
+        children: [
+          const SignalButton(
             isPlus: false,
             propLeft: 0.03864,
             propBottom: 0.35462,
           ),
           BigButton(
-            propBottom: 0.23166,
-            propLeft: 0.10024,
+            positionalBottom: 0.23166,
+            positionalLeft: 0.10024,
+            sizeButton: MediaQuery.of(context).size.width * 0.155,
           ),
-          ActionButton(
+          const ActionButton(
             widget: Icon(Icons.arrow_drop_up),
             propBottom: 0.16576,
             propLeft: 0.13768,
             gradientBegin: Alignment.topCenter,
             gradientEnd: Alignment.bottomCenter,
           ),
-          ActionButton(
+          const ActionButton(
             widget: Icon(Icons.arrow_left),
             propBottom: 0.12432,
             propLeft: 0.06160,
             gradientBegin: Alignment.topCenter,
             gradientEnd: Alignment.bottomCenter,
           ),
-          ActionButton(
+          const ActionButton(
             widget: Icon(Icons.arrow_right),
             propBottom: 0.12432,
             propLeft: 0.21619,
             gradientEnd: Alignment.centerRight,
             gradientBegin: Alignment.centerLeft,
           ),
-          ActionButton(
+          const ActionButton(
             widget: Icon(Icons.arrow_drop_down),
             propBottom: 0.08289,
             propLeft: 0.13768,
             gradientEnd: Alignment.centerRight,
             gradientBegin: Alignment.centerLeft,
           ),
-          Sound(),
+          const Sound(),
         ],
       ),
     );
