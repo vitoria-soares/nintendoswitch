@@ -1,90 +1,89 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class BigLogo extends StatefulWidget {
-  const BigLogo({Key? key}) : super(key: key);
+  final double size;
+  final Color color;
+  final Color bgColor;
+  final double propLeft;
+  final double propBottom;
+  const BigLogo({
+    Key? key,
+    required this.size,
+    required this.color,
+    this.bgColor = Colors.transparent,
+    required this.propLeft,
+    required this.propBottom,
+  }) : super(key: key);
 
   @override
   _BigLogoState createState() => _BigLogoState();
 }
 
+//size.width * 0.34355
 class _BigLogoState extends State<BigLogo> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Center(
+    return Positioned(
+      left: widget.propLeft,
+      bottom: widget.propBottom,
       child: Container(
-        color: const Color.fromARGB(255, 196, 196, 196),
-        height: size.height * 0.19346,
-        width: size.width * 0.34355,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            // ClipPath(
-            //   clipper: BigLogoClipLeft(),
-            //   child: Container(
-            //     width: size.width * 0.16634,
-            //     decoration: const BoxDecoration(
-            //       color: Colors.white,
-            //       // borderRadius: BorderRadius.only(
-            //       //   topLeft: Radius.circular(30),
-            //       //   bottomLeft: Radius.circular(30),
-            //       // ),
-            //     ),
-            //   ),
-            // ),
-            Stack(
-              alignment: Alignment.center,
-              children: [
-                Container(
-                  width: size.width * 0.16634,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
+        color: widget.bgColor,
+        height: widget.size,
+        width: widget.size,
+        child: LayoutBuilder(builder: (context, constraints) {
+          return Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Stack(
+                alignment: Alignment.center,
+                children: [
+                  ClipPath(
+                    clipper: BigLogoClipLeft(),
+                    child: Container(
+                      width: constraints.maxWidth * 0.49,
+                      decoration: BoxDecoration(
+                        color: widget.color,
+                        // borderRadius: BorderRadius.only(
+                        //   topLeft: Radius.circular(30),
+                        //   bottomLeft: Radius.circular(30),
+                        // ),
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    left: constraints.maxWidth * 0.15,
+                    bottom: constraints.maxHeight * 0.6,
+                    child: Container(
+                      height: constraints.maxWidth * 0.19,
+                      width: constraints.maxWidth * 0.19,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: widget.color,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              //tamnho lado direito da logo
+              ClipPath(
+                clipper: BigLogoClipRight(),
+                child: Container(
+                  width: constraints.maxWidth * 0.42,
+                  decoration: BoxDecoration(
+                    color: widget.color,
                     borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      bottomLeft: Radius.circular(30),
+                      topRight:
+                          Radius.circular(constraints.maxWidth * 0.42 / 2),
+                      bottomRight:
+                          Radius.circular(constraints.maxWidth * 0.42 / 2),
                     ),
-                  ),
-                ),
-                Container(
-                  height: size.height * 0.16342,
-                  width: size.width * 0.10933,
-                  decoration: const BoxDecoration(
-                    color: Color.fromARGB(255, 196, 196, 196),
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      bottomLeft: Radius.circular(20),
-                    ),
-                  ),
-                ),
-                Positioned(
-                  left: size.width * 0.05395,
-                  bottom: size.height * 0.11718,
-                  child: Container(
-                    height: size.width * 0.06472,
-                    width: size.width * 0.06472,
-                    decoration: const BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-            ClipPath(
-              clipper: BigLogoClipRight(),
-              child: Container(
-                width: size.width * 0.14392,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(30),
-                    bottomRight: Radius.circular(30),
                   ),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          );
+        }),
       ),
     );
   }
@@ -93,12 +92,14 @@ class _BigLogoState extends State<BigLogo> {
 class BigLogoClipRight extends CustomClipper<Path> {
   double radius = 10;
   @override
+
+  //add rigth circle
   Path getClip(Size size) {
     var pathScreen = Path()
       ..addOval(
         Rect.fromCircle(
             center: Offset(size.width / 2, size.height * 0.5638),
-            radius: size.height * 0.0957),
+            radius: size.width * 0.23),
       )
       ..lineTo(0, 0)
       ..lineTo(0, size.height)
@@ -115,26 +116,38 @@ class BigLogoClipRight extends CustomClipper<Path> {
   }
 }
 
-// class BigLogoClipLeft extends CustomClipper<Path> {
-//   double radius = 10;
-//   @override
-//   Path getClip(Size size) {
-//     var pathScreen = Path()
-//       ..lineTo(size.width * 0.5, 0)
-//       ..quadraticBezierTo(
-//           size.width * 0.1, size.width * 0.1, 0, size.width * 0.5)
-//       ..lineTo(0, size.height - size.width * 0.5)
-//       ..quadraticBezierTo(
-//           size.width * 0.1, size.height - 2, size.width * 0.5, size.height)
-//       ..lineTo(size.width, size.height)
-//       ..lineTo(size.width, 0);
+class BigLogoClipLeft extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    double w = size.width;
+    double h = size.height;
 
-//     pathScreen.close();
-//     return pathScreen;
-//   }
+    var pathScreen = Path()
+      ..addRRect(
+        RRect.fromRectAndCorners(
+          Rect.fromPoints(
+            Offset(w * 0.17, w * 0.17),
+            Offset(w * 0.83, h - w * 0.17),
+          ),
+          topLeft: Radius.circular(w / 2),
+          bottomLeft: Radius.circular(w / 2),
+        ),
+      )
+      ..lineTo(w, 0)
+      ..lineTo(w * 0.5, 0)
+      ..quadraticBezierTo(w * 0.1, w * 0.1, 0, w * 0.5)
+      ..lineTo(0, h - w * 0.5)
+      ..quadraticBezierTo(w * 0.1, h - 2, w * 0.5, h)
+      ..lineTo(w, h)
+      ..lineTo(w, 0);
 
-//   @override
-//   bool shouldReclip(CustomClipper<Path> oldClipper) {
-//     return oldClipper != this;
-//   }
-// }
+    ///
+    pathScreen.close();
+    return pathScreen;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return oldClipper != this;
+  }
+}

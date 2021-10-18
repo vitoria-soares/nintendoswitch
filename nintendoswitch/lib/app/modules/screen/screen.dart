@@ -11,19 +11,30 @@ class Screen extends StatefulWidget {
 class _ScreenState extends State<Screen> {
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      margin: EdgeInsets.symmetric(
-        horizontal: size.width * 0.057973,
-        vertical: size.height * 0.03791,
-      ),
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 0, 0),
-        borderRadius: BorderRadius.all(
-          Radius.circular(20),
-        ),
-      ),
-      child: const BigLogo(),
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        return Center(
+          child: Container(
+            height: constraints.maxHeight * 0.88,
+            width: constraints.maxWidth * 0.88,
+            decoration: const BoxDecoration(
+              color: Color.fromARGB(255, 0, 0, 0),
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+            ),
+            child: Center(
+              child: BigLogo(
+                size: constraints.maxHeight * 0.13,
+                color: Colors.black,
+                bgColor: const Color.fromARGB(255, 196, 196, 196),
+                propBottom: constraints.maxHeight / 2,
+                propLeft: constraints.maxWidth / 2,
+              ),
+            ),
+          ),
+        );
+      },
     );
   }
 }

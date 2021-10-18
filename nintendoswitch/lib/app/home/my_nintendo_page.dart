@@ -25,19 +25,22 @@ class _MyNintendoPageState extends State<MyNintendoPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
         children: [
           const BgScreen(),
           Column(
-            children: const [
-              Expanded(
-                flex: 40963,
-                child: Screen(),
+            children: [
+              SizedBox(
+                width: double.infinity,
+                height: size.height * 0.61,
+                child: const Screen(),
               ),
-              Expanded(
-                flex: 25737,
-                child: Keyboard(),
+              SizedBox(
+                width: double.infinity,
+                height: size.height * 0.39,
+                child: const Keyboard(),
               ),
             ],
           ),
