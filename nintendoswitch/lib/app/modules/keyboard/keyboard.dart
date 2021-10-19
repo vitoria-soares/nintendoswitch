@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nintendoswitch/app/modules/keyboard/components/side/left_side.dart';
 import 'package:nintendoswitch/app/modules/keyboard/components/side/right_side.dart';
 import 'package:nintendoswitch/app/modules/screen/components/lamp.dart';
-import 'package:nintendoswitch/app/modules/screen/components/small_logo.dart';
+import 'package:nintendoswitch/app/modules/screen/components/logo.dart';
 
 class Keyboard extends StatefulWidget {
   const Keyboard({Key? key}) : super(key: key);
@@ -29,7 +29,7 @@ class _KeyboardState extends State<Keyboard> {
               Lamp(propLeft: 0.03864, propBotton: 0.20415),
               Lamp(propLeft: 0.03864, propBotton: 0.18615),
               Lamp(propLeft: 0.03864, propBotton: 0.16712),
-              SmallLogo(),
+              Logo(size: 55, color: Colors.black),
               Lamp(propLeft: 0.28744, propBotton: 0.22418),
               Lamp(propLeft: 0.28744, propBotton: 0.20415),
               Lamp(propLeft: 0.28744, propBotton: 0.18615),

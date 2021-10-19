@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nintendoswitch/app/modules/screen/components/big_logo.dart';
+import 'package:nintendoswitch/app/modules/screen/components/logo.dart';
 
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
@@ -23,15 +23,13 @@ class _ScreenState extends State<Screen> {
                 Radius.circular(20),
               ),
             ),
-            child: Center(
-              child: BigLogo(
-                size: constraints.maxHeight * 0.13,
+            child: LayoutBuilder(builder: (context, constraints) {
+              return Logo(
+                size: constraints.maxWidth * 0.30,
                 color: Colors.black,
                 bgColor: const Color.fromARGB(255, 196, 196, 196),
-                propBottom: constraints.maxHeight / 2,
-                propLeft: constraints.maxWidth / 2,
-              ),
-            ),
+              );
+            }),
           ),
         );
       },

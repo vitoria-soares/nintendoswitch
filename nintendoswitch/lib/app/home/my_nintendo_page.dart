@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nintendoswitch/app/modules/keyboard/keyboard.dart';
-import 'package:nintendoswitch/app/modules/screen/bg_screen.dart';
 import 'package:nintendoswitch/app/modules/screen/screen.dart';
 
 class MyNintendoPage extends StatefulWidget {
@@ -25,26 +24,30 @@ class _MyNintendoPageState extends State<MyNintendoPage> {
 
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
-        children: [
-          const BgScreen(),
-          Column(
-            children: [
-              SizedBox(
-                width: double.infinity,
-                height: size.height * 0.61,
-                child: const Screen(),
-              ),
-              SizedBox(
-                width: double.infinity,
-                height: size.height * 0.39,
-                child: const Keyboard(),
-              ),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color.fromARGB(255, 75, 80, 84),
+              Color.fromARGB(255, 39, 43, 46),
             ],
           ),
-        ],
+        ),
+        child: Column(
+          children: const [
+            Expanded(
+              flex: 61,
+              child: Screen(),
+            ),
+            Expanded(
+              flex: 39,
+              child: Keyboard(),
+            ),
+          ],
+        ),
       ),
     );
   }

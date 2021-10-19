@@ -1,32 +1,26 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-class BigLogo extends StatefulWidget {
+class Logo extends StatefulWidget {
   final double size;
   final Color color;
   final Color bgColor;
-  final double propLeft;
-  final double propBottom;
-  const BigLogo({
+  const Logo({
     Key? key,
     required this.size,
     required this.color,
     this.bgColor = Colors.transparent,
-    required this.propLeft,
-    required this.propBottom,
   }) : super(key: key);
 
   @override
-  _BigLogoState createState() => _BigLogoState();
+  _LogoState createState() => _LogoState();
 }
 
 //size.width * 0.34355
-class _BigLogoState extends State<BigLogo> {
+class _LogoState extends State<Logo> {
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: widget.propLeft,
-      bottom: widget.propBottom,
+    return Center(
       child: Container(
         color: widget.bgColor,
         height: widget.size,
@@ -36,7 +30,6 @@ class _BigLogoState extends State<BigLogo> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Stack(
-                alignment: Alignment.center,
                 children: [
                   ClipPath(
                     clipper: BigLogoClipLeft(),
@@ -44,10 +37,6 @@ class _BigLogoState extends State<BigLogo> {
                       width: constraints.maxWidth * 0.49,
                       decoration: BoxDecoration(
                         color: widget.color,
-                        // borderRadius: BorderRadius.only(
-                        //   topLeft: Radius.circular(30),
-                        //   bottomLeft: Radius.circular(30),
-                        // ),
                       ),
                     ),
                   ),
@@ -65,6 +54,7 @@ class _BigLogoState extends State<BigLogo> {
                   ),
                 ],
               ),
+
               //tamnho lado direito da logo
               ClipPath(
                 clipper: BigLogoClipRight(),
