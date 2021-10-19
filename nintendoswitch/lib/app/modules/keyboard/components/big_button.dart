@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nintendoswitch/app/modules/keyboard/controller/keyboard_controller.dart';
 
 class BigButton extends StatelessWidget {
   final double positionalBottom;
@@ -13,6 +14,8 @@ class BigButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    KeyboardController keyboardController =
+        KeyboardController.instanceSingleton;
     Size size = MediaQuery.of(context).size;
     return Positioned(
       bottom: size.height * positionalBottom,
@@ -73,6 +76,14 @@ class BigButton extends StatelessWidget {
                           Color.fromARGB(255, 103, 106, 111),
                           Color.fromARGB(255, 36, 38, 37),
                         ],
+                      ),
+                    ),
+                    child: Material(
+                      color: Colors.transparent,
+                      child: InkWell(
+                        splashColor: Colors.blue[100],
+                        borderRadius: BorderRadius.circular(30),
+                        onTap: () => keyboardController.lightOnOffEffect(),
                       ),
                     ),
                   );

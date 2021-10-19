@@ -17,17 +17,17 @@ class _ScreenState extends State<Screen> {
           child: Container(
             height: constraints.maxHeight * 0.88,
             width: constraints.maxWidth * 0.88,
-            decoration: const BoxDecoration(
-              color: Color.fromARGB(255, 0, 0, 0),
-              borderRadius: BorderRadius.all(
+            decoration: BoxDecoration(
+              color: Color(int.parse('0xff000000')),
+              borderRadius: const BorderRadius.all(
                 Radius.circular(20),
               ),
             ),
             child: LayoutBuilder(builder: (context, constraints) {
               return Logo(
-                size: constraints.maxWidth * 0.30,
-                color: Colors.black,
-                bgColor: const Color.fromARGB(255, 196, 196, 196),
+                size: constraints.maxWidth * 0.35,
+                color: Color(int.parse('0xffffffff')),
+                bgColor: Color(int.parse('0xffc4c4c4')),
               );
             }),
           ),

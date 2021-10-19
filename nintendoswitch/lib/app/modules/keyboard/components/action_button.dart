@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nintendoswitch/app/modules/keyboard/controller/keyboard_controller.dart';
 
 class ActionButton extends StatelessWidget {
   final Widget widget;
@@ -19,6 +20,8 @@ class ActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    KeyboardController keyboardController =
+        KeyboardController.instanceSingleton;
     Size size = MediaQuery.of(context).size;
     return Positioned(
       bottom: size.height * propBottom,
@@ -54,13 +57,21 @@ class ActionButton extends StatelessWidget {
                   ],
                 ),
               ),
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  return Container(
-                    alignment: Alignment.center,
-                    child: widget,
-                  );
-                },
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  splashColor: Colors.blue[100],
+                  borderRadius: BorderRadius.circular(30),
+                  onTap: () => keyboardController.lightOnOffEffect(),
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return Container(
+                        alignment: Alignment.center,
+                        child: widget,
+                      );
+                    },
+                  ),
+                ),
               ),
             );
           },

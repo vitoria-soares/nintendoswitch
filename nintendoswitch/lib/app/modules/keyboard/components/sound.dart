@@ -61,6 +61,14 @@ class _SoundState extends State<Sound> {
                   shape: BoxShape.circle,
                   color: Color.fromARGB(255, 24, 32, 34),
                 ),
+                child: Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    splashColor: Colors.blue[100],
+                    borderRadius: BorderRadius.circular(30),
+                    onTap: () {},
+                  ),
+                ),
               );
             }),
           );

@@ -28,8 +28,8 @@ class _LampState extends State<Lamp> {
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: widget.isOn
-              ? const Color.fromARGB(255, 182, 235, 165)
-              : const Color.fromARGB(255, 34, 35, 39),
+              ? Color(int.parse('0xffB6EBA5'))
+              : Color(int.parse('0xff222327')),
         ),
       ),
     );

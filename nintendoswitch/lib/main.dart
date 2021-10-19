@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:nintendoswitch/my_app.dart';
 
 void main() {
+  //assign transparent color to status bar
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
       statusBarColor: Colors.transparent,
@@ -10,6 +11,7 @@ void main() {
   );
 
   runApp(
+    //launch the app
     const MyApp(),
   );
 }

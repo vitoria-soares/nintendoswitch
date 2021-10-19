@@ -24,29 +24,21 @@ class _SignalButtonState extends State<SignalButton> {
     return Positioned(
       left: size.width * widget.propLeft,
       bottom: size.height * widget.propBottom,
-      //top: size.height * 0.01223388,
-      child: Stack(
-        alignment: Alignment.center,
-        children: [
-          Container(
-            height: height,
+      child: Material(
+        color: Colors.transparent,
+        child: InkWell(
+          splashColor: Colors.blue[100],
+          borderRadius: BorderRadius.circular(30),
+          onTap: () {},
+          child: SizedBox(
+            height: width,
             width: width,
-            decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color.fromARGB(255, 74, 73, 78),
-                  Color.fromARGB(255, 82, 81, 87),
-                ],
-              ),
-            ),
-          ),
-          !widget.isPlus
-              ? Container()
-              : Container(
-                  height: width,
-                  width: height,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Container(
+                  height: height,
+                  width: width,
                   decoration: const BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
@@ -58,7 +50,26 @@ class _SignalButtonState extends State<SignalButton> {
                     ),
                   ),
                 ),
-        ],
+                !widget.isPlus
+                    ? Container()
+                    : Container(
+                        height: width,
+                        width: height,
+                        decoration: const BoxDecoration(
+                          gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                            colors: [
+                              Color.fromARGB(255, 74, 73, 78),
+                              Color.fromARGB(255, 82, 81, 87),
+                            ],
+                          ),
+                        ),
+                      ),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

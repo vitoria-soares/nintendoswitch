@@ -16,7 +16,6 @@ class Logo extends StatefulWidget {
   _LogoState createState() => _LogoState();
 }
 
-//size.width * 0.34355
 class _LogoState extends State<Logo> {
   @override
   Widget build(BuildContext context) {
@@ -29,10 +28,11 @@ class _LogoState extends State<Logo> {
           return Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              //side left logo
               Stack(
                 children: [
                   ClipPath(
-                    clipper: BigLogoClipLeft(),
+                    clipper: LogoClipLeft(),
                     child: Container(
                       width: constraints.maxWidth * 0.49,
                       decoration: BoxDecoration(
@@ -55,7 +55,7 @@ class _LogoState extends State<Logo> {
                 ],
               ),
 
-              //tamnho lado direito da logo
+              //side right logo
               ClipPath(
                 clipper: BigLogoClipRight(),
                 child: Container(
@@ -106,13 +106,14 @@ class BigLogoClipRight extends CustomClipper<Path> {
   }
 }
 
-class BigLogoClipLeft extends CustomClipper<Path> {
+class LogoClipLeft extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     double w = size.width;
     double h = size.height;
 
     var pathScreen = Path()
+      //inside
       ..addRRect(
         RRect.fromRectAndCorners(
           Rect.fromPoints(
@@ -123,6 +124,7 @@ class BigLogoClipLeft extends CustomClipper<Path> {
           bottomLeft: Radius.circular(w / 2),
         ),
       )
+      //outside
       ..lineTo(w, 0)
       ..lineTo(w * 0.5, 0)
       ..quadraticBezierTo(w * 0.1, w * 0.1, 0, w * 0.5)
@@ -131,7 +133,6 @@ class BigLogoClipLeft extends CustomClipper<Path> {
       ..lineTo(w, h)
       ..lineTo(w, 0);
 
-    ///
     pathScreen.close();
     return pathScreen;
   }

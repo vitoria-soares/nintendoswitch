@@ -35,15 +35,25 @@ class HomeButton extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Color.fromARGB(255, 51, 56, 60),
               ),
-              child: LayoutBuilder(builder: (context, constraints) {
-                return Center(
-                  child: Icon(
-                    Icons.home,
-                    color: const Color.fromARGB(255, 0, 0, 0),
-                    size: constraints.maxWidth * 0.6,
+              child: Material(
+                color: Colors.transparent,
+                child: InkWell(
+                  splashColor: Colors.blue[100],
+                  borderRadius: BorderRadius.circular(30),
+                  onTap: () => {},
+                  child: LayoutBuilder(
+                    builder: (context, constraints) {
+                      return Center(
+                        child: Icon(
+                          Icons.home,
+                          color: const Color.fromARGB(255, 0, 0, 0),
+                          size: constraints.maxWidth * 0.6,
+                        ),
+                      );
+                    },
                   ),
-                );
-              }),
+                ),
+              ),
             );
           },
         ),
