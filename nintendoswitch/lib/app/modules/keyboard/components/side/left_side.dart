@@ -15,9 +15,9 @@ class _LeftSideState extends State<LeftSide> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 0, 189, 221),
-        borderRadius: BorderRadius.only(topRight: Radius.circular(85)),
+      decoration: BoxDecoration(
+        color: Color(int.parse('0xff00BDDD')),
+        borderRadius: const BorderRadius.only(topRight: Radius.circular(85)),
       ),
       child: Stack(
         children: [

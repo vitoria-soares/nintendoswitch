@@ -15,13 +15,13 @@ class _RightSideState extends State<RightSide> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromARGB(255, 255, 95, 83),
-        borderRadius: BorderRadius.only(topLeft: Radius.circular(85)),
+      decoration: BoxDecoration(
+        color: Color(int.parse('0xffFF5F53')),
+        borderRadius: const BorderRadius.only(topLeft: Radius.circular(85)),
       ),
       child: Stack(
-        children: const [
-          SignalButton(
+        children: [
+          const SignalButton(
             isPlus: true,
             propLeft: 0.22312,
             propBottom: 0.34511,
@@ -29,7 +29,7 @@ class _RightSideState extends State<RightSide> {
           ActionButton(
             widget: Text(
               'X',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(int.parse('0xffFFFFFF'))),
             ),
             propBottom: 0.29484,
             propLeft: 0.11475,
@@ -39,7 +39,7 @@ class _RightSideState extends State<RightSide> {
           ActionButton(
             widget: Text(
               'Y',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(int.parse('0xffFFFFFF'))),
             ),
             propBottom: 0.25340,
             propLeft: 0.03864,
@@ -49,7 +49,7 @@ class _RightSideState extends State<RightSide> {
           ActionButton(
             widget: Text(
               'A',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(int.parse('0xffFFFFFF'))),
             ),
             propBottom: 0.25340,
             propLeft: 0.19445,
@@ -59,18 +59,18 @@ class _RightSideState extends State<RightSide> {
           ActionButton(
             widget: Text(
               'B',
-              style: TextStyle(color: Colors.white),
+              style: TextStyle(color: Color(int.parse('0xffFFFFFF'))),
             ),
             propBottom: 0.21196,
             propLeft: 0.11475,
             gradientEnd: Alignment.centerRight,
             gradientBegin: Alignment.centerLeft,
           ),
-          BigButton(
+          const BigButton(
             positionalBottom: 0.10258,
             positionalLeft: 0.07608,
           ),
-          HomeButton(),
+          const HomeButton(),
         ],
       ),
     );

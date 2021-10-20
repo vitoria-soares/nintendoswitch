@@ -23,7 +23,7 @@ class HomeButton extends StatelessWidget {
             width: 1,
           ),
           shape: BoxShape.circle,
-          color: const Color.fromARGB(255, 143, 137, 137),
+          color: Color(int.parse('0xff8F8989')),
         ),
         child: LayoutBuilder(
           builder: (context, contraints) {
@@ -31,9 +31,9 @@ class HomeButton extends StatelessWidget {
               alignment: Alignment.center,
               height: contraints.maxWidth * 0.7,
               width: contraints.maxWidth * 0.7,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Color.fromARGB(255, 51, 56, 60),
+                color: Color(int.parse('0xff33383C')),
               ),
               child: Material(
                 color: Colors.transparent,
@@ -46,7 +46,7 @@ class HomeButton extends StatelessWidget {
                       return Center(
                         child: Icon(
                           Icons.home,
-                          color: const Color.fromARGB(255, 0, 0, 0),
+                          color: Color(int.parse('0xff000000')),
                           size: constraints.maxWidth * 0.6,
                         ),
                       );

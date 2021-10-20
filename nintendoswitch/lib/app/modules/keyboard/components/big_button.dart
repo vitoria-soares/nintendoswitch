@@ -31,12 +31,12 @@ class BigButton extends StatelessWidget {
             color: Colors.black,
             width: 1,
           ),
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 104, 109, 112),
-              Color.fromARGB(255, 5, 15, 17),
+              Color(int.parse('0xff686D70')),
+              Color(int.parse('0xff050F11')),
             ],
           ),
         ),
@@ -46,14 +46,14 @@ class BigButton extends StatelessWidget {
               //tamanho proporcional por %
               height: constraints.maxWidth * 0.8,
               width: constraints.maxWidth * 0.8,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
                   colors: [
-                    Color.fromARGB(255, 104, 109, 112),
-                    Color.fromARGB(255, 5, 15, 17),
+                    Color(int.parse('0xff686D70')),
+                    Color(int.parse('0xff050F11')),
                   ],
                 ),
               ),
@@ -69,12 +69,12 @@ class BigButton extends StatelessWidget {
                         color: Colors.black,
                         width: 1,
                       ),
-                      gradient: const LinearGradient(
+                      gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,
                         colors: [
-                          Color.fromARGB(255, 103, 106, 111),
-                          Color.fromARGB(255, 36, 38, 37),
+                          Color(int.parse('0xff676A6F')),
+                          Color(int.parse('0xff242625')),
                         ],
                       ),
                     ),

@@ -39,13 +39,13 @@ class _SignalButtonState extends State<SignalButton> {
                 Container(
                   height: height,
                   width: width,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
-                        Color.fromARGB(255, 74, 73, 78),
-                        Color.fromARGB(255, 82, 81, 87),
+                        Color(int.parse('0xff4A494E')),
+                        Color(int.parse('0xff525157')),
                       ],
                     ),
                   ),
@@ -55,13 +55,13 @@ class _SignalButtonState extends State<SignalButton> {
                     : Container(
                         height: width,
                         width: height,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           gradient: LinearGradient(
                             begin: Alignment.topCenter,
                             end: Alignment.bottomCenter,
                             colors: [
-                              Color.fromARGB(255, 74, 73, 78),
-                              Color.fromARGB(255, 82, 81, 87),
+                              Color(int.parse('0xff4A494E')),
+                              Color(int.parse('0xff525157')),
                             ],
                           ),
                         ),

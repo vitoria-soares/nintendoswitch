@@ -20,15 +20,15 @@ class _SoundState extends State<Sound> {
         alignment: Alignment.center,
         height: size.width * 0.06282,
         width: size.width * 0.06282,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(2)),
+        decoration: BoxDecoration(
+          borderRadius: const BorderRadius.all(Radius.circular(2)),
           //shape: BoxShape.circle,
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 123, 130, 135),
-              Color.fromARGB(255, 50, 65, 68),
+              Color(int.parse('0xff7B8287')),
+              Color(int.parse('0xff324144')),
             ],
           ),
         ),
@@ -39,15 +39,15 @@ class _SoundState extends State<Sound> {
             // width: size.width * 0.053173,
             height: constraints.maxWidth * 0.8,
             width: constraints.maxWidth * 0.8,
-            decoration: const BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(2)),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.all(Radius.circular(2)),
               //shape: BoxShape.circle,
               gradient: LinearGradient(
                 begin: Alignment.topCenter,
                 end: Alignment.bottomCenter,
                 colors: [
-                  Color.fromARGB(255, 74, 73, 78),
-                  Color.fromARGB(255, 82, 81, 87),
+                  Color(int.parse('0xff4A494E')),
+                  Color(int.parse('0xff525157')),
                 ],
               ),
             ),
@@ -57,9 +57,9 @@ class _SoundState extends State<Sound> {
                 // width: size.width * 0.038666,
                 height: constraints.maxWidth * 0.75,
                 width: constraints.maxWidth * 0.75,
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: Color.fromARGB(255, 24, 32, 34),
+                  color: Color(int.parse('0xff182022')),
                 ),
                 child: Material(
                   color: Colors.transparent,

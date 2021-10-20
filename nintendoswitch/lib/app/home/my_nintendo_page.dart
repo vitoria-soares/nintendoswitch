@@ -26,13 +26,13 @@ class _MyNintendoPageState extends State<MyNintendoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromARGB(255, 75, 80, 84),
-              Color.fromARGB(255, 39, 43, 46),
+              Color(int.parse('0xff4B5054')),
+              Color(int.parse('0xff272B2E')),
             ],
           ),
         ),

@@ -34,9 +34,9 @@ class ActionButton extends StatelessWidget {
           gradient: LinearGradient(
             begin: gradientBegin,
             end: gradientEnd,
-            colors: const [
-              Color.fromARGB(255, 123, 130, 125),
-              Color.fromARGB(255, 5, 15, 17),
+            colors: [
+              Color(int.parse('0xff7B8287')),
+              Color(int.parse('0xff050F11')),
             ],
           ),
         ),
@@ -46,14 +46,14 @@ class ActionButton extends StatelessWidget {
               alignment: Alignment.center,
               height: constraints.maxWidth * 0.8,
               width: constraints.maxWidth * 0.8,
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    Color.fromARGB(255, 104, 109, 112),
-                    Color.fromARGB(255, 5, 15, 17),
+                    Color(int.parse('0xff686D70')),
+                    Color(int.parse('0xff050F11')),
                   ],
                 ),
               ),
