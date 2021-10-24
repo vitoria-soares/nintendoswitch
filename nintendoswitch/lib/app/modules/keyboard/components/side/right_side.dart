@@ -27,20 +27,24 @@ class _RightSideState extends State<RightSide> {
             propBottom: 0.34511,
           ),
           ActionButton(
+            colorWidget: const Color(0xffffffff),
             buttonAction: ButtonAction.x,
             propBottom: 0.29484,
             propLeft: 0.11475,
           ),
           ActionButton(
+            colorWidget: const Color(0xffffffff),
             buttonAction: ButtonAction.y,
             propBottom: 0.25340,
             propLeft: 0.03864,
           ),
           ActionButton(
+            colorWidget: const Color(0xffffffff),
             propBottom: 0.25340,
             propLeft: 0.19445,
           ),
           ActionButton(
+            colorWidget: const Color(0xffffffff),
             buttonAction: ButtonAction.b,
             propBottom: 0.21196,
             propLeft: 0.11475,

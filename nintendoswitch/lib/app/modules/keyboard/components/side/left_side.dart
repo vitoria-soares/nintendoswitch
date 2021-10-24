@@ -25,8 +25,6 @@ class _LeftSideState extends State<LeftSide> {
             isPlus: false,
             propLeft: 0.03864,
             propBottom: 0.34511,
-            // propLeft: 0.03864,
-            // propBottom: 0.35462,
           ),
           BigButton(
             positionalBottom: 0.23166,

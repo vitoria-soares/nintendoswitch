@@ -7,14 +7,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Nintendo Switch',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+
       //call home page
-      home: const MyNintendoPage(title: 'Nintendo Switch'),
+      home: MyNintendoPage(title: 'Nintendo Switch'),
     );
   }
 }

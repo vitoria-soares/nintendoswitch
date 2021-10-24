@@ -6,6 +6,7 @@ enum ButtonAction { up, down, left, rigth, x, y, a, b }
 
 //concluir enuns
 class ActionButton extends StatelessWidget {
+  final Color colorWidget;
   final double propBottom;
   final double propLeft;
   final double sizeButton;
@@ -16,6 +17,7 @@ class ActionButton extends StatelessWidget {
     required this.propLeft,
     this.sizeButton = 28,
     this.buttonAction = ButtonAction.a,
+    this.colorWidget = const Color(0xff000000),
   }) : super(key: key);
 
   final ButtonGradient gradientBig = ButtonGradient.big();
@@ -33,7 +35,10 @@ class ActionButton extends StatelessWidget {
       if (buttonAction == ButtonAction.up) {
         widgetCustom = const Icon(Icons.arrow_drop_up);
       } else {
-        widgetCustom = const Text('X');
+        widgetCustom = Text(
+          'X',
+          style: TextStyle(color: colorWidget),
+        );
       }
     } else if (buttonAction == ButtonAction.left ||
         buttonAction == ButtonAction.y) {
@@ -42,7 +47,10 @@ class ActionButton extends StatelessWidget {
       if (buttonAction == ButtonAction.left) {
         widgetCustom = const Icon(Icons.arrow_left);
       } else {
-        widgetCustom = const Text('Y');
+        widgetCustom = Text(
+          'Y',
+          style: TextStyle(color: colorWidget),
+        );
       }
     } else if (buttonAction == ButtonAction.rigth ||
         buttonAction == ButtonAction.a) {
@@ -51,7 +59,10 @@ class ActionButton extends StatelessWidget {
       if (buttonAction == ButtonAction.rigth) {
         widgetCustom = const Icon(Icons.arrow_right);
       } else {
-        widgetCustom = const Text('A');
+        widgetCustom = Text(
+          'A',
+          style: TextStyle(color: colorWidget),
+        );
       }
     } else if (buttonAction == ButtonAction.down ||
         buttonAction == ButtonAction.b) {
@@ -60,7 +71,10 @@ class ActionButton extends StatelessWidget {
       if (buttonAction == ButtonAction.down) {
         widgetCustom = const Icon(Icons.arrow_drop_down);
       } else {
-        widgetCustom = const Text('B');
+        widgetCustom = Text(
+          'B',
+          style: TextStyle(color: colorWidget),
+        );
       }
     }
 

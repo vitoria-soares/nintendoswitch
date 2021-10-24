@@ -27,9 +27,8 @@ class _LampState extends State<Lamp> {
         width: size.width * 0.01450,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: widget.isOn
-              ? Color(int.parse('0xffB6EBA5'))
-              : Color(int.parse('0xff222327')),
+          color:
+              widget.isOn ? const Color(0xffB6EBA5) : const Color(0xff222327),
         ),
       ),
     );
