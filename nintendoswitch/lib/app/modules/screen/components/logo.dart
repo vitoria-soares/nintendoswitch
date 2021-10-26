@@ -106,6 +106,7 @@ class BigLogoClipRight extends CustomClipper<Path> {
   }
 }
 
+//left
 class LogoClipLeft extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
