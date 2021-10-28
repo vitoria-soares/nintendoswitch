@@ -26,7 +26,7 @@ class _LogoRState extends State<LogoR> {
         child: LayoutBuilder(
           builder: (context, constraints) {
             return ClipPath(
-              //clipper: LogoClip(),
+              clipper: LogoClip(),
               child: Container(
                 height: constraints.maxHeight,
                 width: constraints.maxWidth,
@@ -130,31 +130,45 @@ class LogoClip extends CustomClipper<Path> {
 
     var cutLeftSide = RRect.fromRectAndCorners(
       Rect.fromPoints(
-        Offset(w * 0.17, w * 0.17),
-        Offset(w * 0.83, h - w * 0.17),
+        Offset(w * 0.07, w * 0.07),
+        Offset(w * 0.48 - w * 0.07, h * 0.93),
       ),
-      topLeft: Radius.circular(w / 2),
-      bottomLeft: Radius.circular(w / 2),
+      topLeft: Radius.circular(w * .48 / 2),
+      bottomLeft: Radius.circular(w * .48 / 2),
     );
 
-    var allCircle = Path()
-      ..lineTo(0, 1)
-      ..lineTo(1, 1)
-      ..lineTo(1, 0);
+    var retangleCut = Rect.fromCenter(
+      center: Offset(w * 0.53, h / 2),
+      width: w * 0.1,
+      height: h,
+    );
 
-      var retangleCut = Path()
-      ..lineTo(w / 2, 0)
+    var circleLeft = Rect.fromCenter(
+      center: Offset(w * 0.24, h * 0.4),
+      width: w * 0.2,
+      height: w * 0.2,
+    );
+
+    var circleRight = Rect.fromCenter(
+      center: Offset(w * 0.78, h * 0.66),
+      width: w * 0.20,
+      height: w * 0.20,
+    );
+
     var pathScreen = Path()
-      //inside
-      ..addRRect(cutLeftSide)
-      //outside
-      ..lineTo(w, 0)
-      ..lineTo(w * 0.5, 0)
-      ..quadraticBezierTo(w * 0.1, w * 0.1, 0, w * 0.5)
-      ..lineTo(0, h - w * 0.5)
-      ..quadraticBezierTo(w * 0.1, h - 2, w * 0.5, h)
+      //objeto
+      ..lineTo(0, 0)
+      ..lineTo(0, h)
       ..lineTo(w, h)
-      ..lineTo(w, 0);
+      ..lineTo(w, 0)
+      //recorte lado esquerdo
+      ..addRRect(cutLeftSide)
+      //corte central
+      ..addRect(retangleCut)
+      //corte circular
+      ..addOval(circleLeft)
+      //corte circular
+      ..addOval(circleRight);
 
     pathScreen.close();
     return pathScreen;
