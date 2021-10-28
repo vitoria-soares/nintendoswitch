@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nintendoswitch/app/modules/screen/components/logo.dart';
+import 'package:nintendoswitch/app/modules/screen/components/logo_r.dart';
 
 class Screen extends StatefulWidget {
   const Screen({Key? key}) : super(key: key);
@@ -24,7 +25,7 @@ class _ScreenState extends State<Screen> {
               ),
             ),
             child: LayoutBuilder(builder: (context, constraints) {
-              return Logo(
+              return LogoR(
                 size: constraints.maxWidth * 0.35,
                 color: const Color(0xffffffff),
                 bgColor: const Color(0xffc4c4c4),

@@ -4,6 +4,7 @@ import 'package:nintendoswitch/app/modules/keyboard/components/side/right_side.d
 import 'package:nintendoswitch/app/modules/keyboard/controller/keyboard_controller.dart';
 import 'package:nintendoswitch/app/modules/screen/components/lamp.dart';
 import 'package:nintendoswitch/app/modules/screen/components/logo.dart';
+import 'package:nintendoswitch/app/modules/screen/components/logo_r.dart';
 
 class Keyboard extends StatefulWidget {
   const Keyboard({Key? key}) : super(key: key);
@@ -45,7 +46,7 @@ class _KeyboardState extends State<Keyboard> {
                         propLeft: 0.03864,
                         propBotton: 0.16712,
                         isOn: keyboardController.lightOn[3]),
-                    Logo(size: 55, color: Color(int.parse('0xff000000'))),
+                    LogoR(size: 55, color: Color(int.parse('0xff000000'))),
                     Lamp(
                         propLeft: 0.28744,
                         propBotton: 0.22418,
