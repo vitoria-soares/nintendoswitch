@@ -3,7 +3,6 @@ import 'package:nintendoswitch/app/modules/keyboard/components/side/left_side.da
 import 'package:nintendoswitch/app/modules/keyboard/components/side/right_side.dart';
 import 'package:nintendoswitch/app/modules/keyboard/controller/keyboard_controller.dart';
 import 'package:nintendoswitch/app/modules/screen/components/lamp.dart';
-import 'package:nintendoswitch/app/modules/screen/components/logo.dart';
 import 'package:nintendoswitch/app/modules/screen/components/logo_r.dart';
 
 class Keyboard extends StatefulWidget {

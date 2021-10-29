@@ -27,10 +27,7 @@ class BigButton extends StatelessWidget {
         width: sizeButton,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          border: Border.all(
-            color: Colors.black,
-            width: 1,
-          ),
+          border: Border.all(),
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
@@ -65,10 +62,7 @@ class BigButton extends StatelessWidget {
                     width: constraints.maxWidth * 0.9,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
-                      border: Border.all(
-                        color: Colors.black,
-                        width: 1,
-                      ),
+                      border: Border.all(),
                       gradient: LinearGradient(
                         begin: Alignment.topCenter,
                         end: Alignment.bottomCenter,

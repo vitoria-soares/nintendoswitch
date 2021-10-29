@@ -6,7 +6,7 @@ class LogoR extends StatefulWidget {
   final Color bgColor;
   const LogoR({
     Key? key,
-    required this.size,
+    this.size = 129,
     required this.color,
     this.bgColor = Colors.transparent,
   }) : super(key: key);
@@ -38,55 +38,6 @@ class _LogoRState extends State<LogoR> {
                 ),
               ),
             );
-
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //   children: [
-            //     //side left logo
-            //     Stack(
-            //       children: [
-            //         ClipPath(
-            //           clipper: LogoClipLeft(),
-            //           child: Container(
-            //             width: constraints.maxWidth * 0.49,
-            //             decoration: BoxDecoration(
-            //               color: widget.color,
-            //             ),
-            //           ),
-            //         ),
-            //         Positioned(
-            //           left: constraints.maxWidth * 0.15,
-            //           bottom: constraints.maxHeight * 0.6,
-            //           child: Container(
-            //             height: constraints.maxWidth * 0.19,
-            //             width: constraints.maxWidth * 0.19,
-            //             decoration: BoxDecoration(
-            //               shape: BoxShape.circle,
-            //               color: widget.color,
-            //             ),
-            //           ),
-            //         ),
-            //       ],
-            //     ),
-
-            //     //side right logo
-            //     ClipPath(
-            //       clipper: BigLogoClipRight(),
-            //       child: Container(
-            //         width: constraints.maxWidth * 0.42,
-            //         decoration: BoxDecoration(
-            //           color: widget.color,
-            //           borderRadius: BorderRadius.only(
-            //             topRight:
-            //                 Radius.circular(constraints.maxWidth * 0.42 / 2),
-            //             bottomRight:
-            //                 Radius.circular(constraints.maxWidth * 0.42 / 2),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // );
           },
         ),
       ),
@@ -94,68 +45,40 @@ class _LogoRState extends State<LogoR> {
   }
 }
 
-class BigLogoClipRight extends CustomClipper<Path> {
-  double radius = 10;
-  @override
-
-  //add rigth circle
-  Path getClip(Size size) {
-    var pathScreen = Path()
-      ..addOval(
-        Rect.fromCircle(
-            center: Offset(size.width / 2, size.height * 0.5638),
-            radius: size.width * 0.23),
-      )
-      ..lineTo(0, 0)
-      ..lineTo(0, size.height)
-      ..lineTo(size.width, size.height)
-      ..lineTo(size.width, 0)
-      ..lineTo(0, 0);
-    pathScreen.close();
-    return pathScreen;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return oldClipper != this;
-  }
-}
-
-//left
 class LogoClip extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     double w = size.width;
     double h = size.height;
 
-    var cutLeftSide = RRect.fromRectAndCorners(
+    final cutLeftSide = RRect.fromRectAndCorners(
       Rect.fromPoints(
         Offset(w * 0.07, w * 0.07),
         Offset(w * 0.48 - w * 0.07, h * 0.93),
       ),
-      topLeft: Radius.circular(w * .48 / 2),
-      bottomLeft: Radius.circular(w * .48 / 2),
+      topLeft: Radius.circular(w * .18),
+      bottomLeft: Radius.circular(w * .18),
     );
 
-    var retangleCut = Rect.fromCenter(
+    final retangleCut = Rect.fromCenter(
       center: Offset(w * 0.53, h / 2),
       width: w * 0.1,
       height: h,
     );
 
-    var circleLeft = Rect.fromCenter(
+    final circleLeft = Rect.fromCenter(
       center: Offset(w * 0.24, h * 0.4),
       width: w * 0.2,
       height: w * 0.2,
     );
 
-    var circleRight = Rect.fromCenter(
+    final circleRight = Rect.fromCenter(
       center: Offset(w * 0.78, h * 0.66),
       width: w * 0.20,
       height: w * 0.20,
     );
 
-    var pathScreen = Path()
+    final pathScreen = Path()
       //objeto
       ..lineTo(0, 0)
       ..lineTo(0, h)
