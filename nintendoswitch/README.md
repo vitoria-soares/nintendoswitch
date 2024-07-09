@@ -1,16 +1,9 @@
-# nintendoswitch
+# Design inspirated by Nintendo
 
-A new Flutter project.
+Challenge proposed by Flutterando community.
 
-## Getting Started
+## Mockup Link
+https://www.figma.com/file/EVeqd5Nlgr3MNE2JyespMj/NintendoSwt-Flutterando?node-id=2%3A102
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## ScreenShoot
+<img src="https://github.com/vitoria-soares/nintendoswitch/assets/67613433/c6939b2d-b732-4fad-aef0-af7fb3405f19" width="222" height="346">
